@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  body {
+    font-family: sans-serif;
+    font-size: 16px;
+    background-color: aliceblue;
+  }
+  
+  .naslov {
+    background-color: seagreen;
+    color: aliceblue;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 0 15px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu li a {
+    display: block;
+    padding: 15px 5px;
+  }
+  
+  .item {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .item:hover {
+    background-color: seagreen;
+  }
+  
+  .item a:hover {
+    color: black;
+  }
+  
+  footer {
+    background-color: #333;
+    color: seagreen;
+    text-align: center;
+    font-size: small;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .tekst {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: x-large;
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .izbornik {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .izbornik h2 {
+    position: absolute;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: xx-large;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .izbornik div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+  }
+  
+  .izbornik img {
+    filter: brightness(60%);
+  }
+  
+  .izbornik img:hover {
+    filter: brightness(30%);
+  }
+  
+  @media all and (min-width: 960px) {
+    .menu {
+      align-items: flex-start;
+      flex-wrap: nowrap;
+      background: none;
+    }
+  
+    .item {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+  
+    .izbornik {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .izbornik div {
+      display: flex;
+      flex-direction: row;
+      min-height: 75vh;
+      max-width: 34%;
+    }
+
+    .tablicaDiv{
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-evenly;
+    }
+
+    .searchDiv{
+      margin-top: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+
+  }
+  

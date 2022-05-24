@@ -26,21 +26,20 @@
       $db = Db::getInstance();
       $req = $db->query('SELECT * FROM company');
 
-      foreach($req->fetchAll() as $Company) {
-        $list[] = new Company($Company['id'], $Company['company_name'], $Company['address'], $Company['phone'], $Company['fax'], $Company['email'], $Company['website'], $Company['description']);
+      foreach($req->fetchAll() as $comp) {
+        $list[] = new Company($comp['id'], $comp['company_name'], $comp['address'], $comp['phone'], $comp['fax'], $comp['email'], $comp['website'], $comp['description']);
       }
 
       return $list;
     }
 
-    public static function find($id) {
+    public static function find($comp) {
       $db = Db::getInstance();
-      $id = intval($id);
-      $req = $db->prepare('SELECT * FROM company WHERE id = :id');
-      $req->execute(array('id' => $id));
-      $Company = $req->fetch();
+      $comp = intval($comp);
+      $req = $db->prepare("SELECT * FROM company WHERE id = '$comp'");
+      $companydetails = $req->fetch();
 
-      return new Company($Company['id'], $Company['company_name'], $Company['address'], $Company['phone'], $Company['fax'], $Company['email'], $Company['website'], $Company['description']);
+      return new Company($companydetails['id'], $companydetails['company_name'], $companydetails['address'], $companydetails['phone'], $companydetails['fax'], $companydetails['email'], $companydetails['website'], $companydetails['description']);
     }
 
     public static function insertcompanies($company_name, $address, $phone, $fax, $email, $website, $description) {
@@ -50,17 +49,17 @@
       $db->query($sql);
     }
 
-    public static function updatecompanies($id, $company_name, $address, $phone, $fax, $email, $website, $description) {
+    public static function updatecompanies($comp, $company_name, $address, $phone, $fax, $email, $website, $description) {
       $db = Db::getInstance();
-      $id = intval($id);
+      $comp = intval($comp);
       $sql="UPDATE company SET company_name = '$company_name', address = '$address', phone = '$phone', fax = '$fax', email = '$email', website = '$website', description = '$description';
-      WHERE id = '$id'";
+      WHERE id = '$comp'";
       $db->query($sql);
     }
 
-  	public static function deletecompanies($id) {
+  	public static function deletecompanies($comp) {
       $db = Db::getInstance();
-      $sql="DELETE FROM company WHERE id = '$id'";
+      $sql="DELETE FROM company WHERE id = '$comp'";
 	    $db->query($sql);
 		}
 

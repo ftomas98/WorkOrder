@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>WorkOrder</title>
-        <link rel="stylesheet" href="../../DZ1/styles.css">
+        <link rel="stylesheet" href="../DZ1/styles.css">
     </head>
     <body>
         <header>
@@ -28,15 +28,15 @@
             <div class="tekst"><p>Sign up as...</p></div>
             <div class="izbornik">  
                 <div class="contractor">
-                    <img src="./slike/contractor1.jpg" alt="contractor" class="slika1">
+                    <img src="../DZ1/slike/contractor1.jpg" alt="contractor" class="slika1">
                     <h2>CONTRACTOR</h2>
                 </div>
                 <div class="dispatcher">
-                    <img src="./slike/dispatcher1.jpg" alt="dispatcher" class="slika1">
+                    <img src="../DZ1/slike/dispatcher1.jpg" alt="dispatcher" class="slika1">
                     <h2>DISPATCHER</h2>
                 </div>
                 <div class="client">
-                    <img src="./slike/client1.jpg" alt="client" class="slika1">
+                    <img src="../DZ1/slike/client1.jpg" alt="client" class="slika1">
                     <h2>CLIENT</h2>
                 </div>
             </div>

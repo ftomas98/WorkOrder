@@ -1,47 +1,47 @@
 <?php
-  class ManagersController {
+  class ManagerController {
     public function index() {
-      $managers = Managers::all();
-      require_once('views/managers/index.php');
+      $manager = Manager::all();
+      require_once('views/manager/index.php');
     }
   
     public function verifyinsert(){
-      require_once('views/managers/insert.php');
+      require_once('views/manager/insert.php');
     }
 
-    public function insertmanagers()
+    public function insertmanager()
     {
-      Managers::insertmanagers($_POST['name'],$_POST['location_id']);
-     return call('managers', 'index');
+      Manager::insertmanager($_POST['name'],$_POST['location_id']);
+     return call('manager', 'index');
     }
   
   public function verifyupdate()
   {
     if (!isset($_GET['man']))
           return call('pages', 'error');
-    $managersdetails = Managers::find($_GET['man']);
-    require_once('views/managers/update.php');
+    $managerdetails = Manager::find($_GET['man']);
+    require_once('views/manager/update.php');
   }
 
-  public function updatemanagers()
+  public function updatemanager()
   {
     if (!isset($_POST['man']))
       return call('pages', 'error');
-    Managers::updatemanagers($_POST['man'],$_POST['name'],$_POST['location_id']);
-    return call('managers', 'index');
+    Manager::updatemanager($_POST['man'],$_POST['name'],$_POST['location_id']);
+    return call('manager', 'index');
   }
 
 	public function delete() {
       if (!isset($_GET['man']))
         return call('pages', 'error');
-      Managers::deletemanagers($_GET['man']);
-      return call('managers', 'index');
+      Manager::deletemanager($_GET['man']);
+      return call('manager', 'index');
     }
 
     public function verifydelete(){
       if (!isset($_GET['man']))
           return call('pages', 'error');
-          require_once('views/managers/delete.php');
+          require_once('views/manager/delete.php');
       }
   }
 ?>

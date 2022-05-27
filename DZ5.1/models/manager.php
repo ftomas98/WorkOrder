@@ -15,24 +15,23 @@
       $list = [];
       $db = Db::getInstance();
       $req = $db->query('SELECT * FROM manager');
-      foreach($req->fetchAll() as $Manager) {
-        $list[] = new Manager($Manager['id'], $Manager['name'], $Manager['location_id']);
+      foreach($req->fetchAll() as $man) {
+        $list[] = new Manager($man['id'], $man['name'], $man['location_id']);
       }
 
       return $list;
     }
 
-    public static function find($id) {
+    public static function find($man) {
       $db = Db::getInstance();
-      $id = intval($id);
-      $req = $db->query("SELECT * FROM manager WHERE id = :id");
-      $req->execute(array('id' => $id));
-      $Manager = $req->fetch();
+      $man = intval($man);
+      $req = $db->query("SELECT * FROM manager WHERE id = '$man'");
+      $managerdetails = $req->fetch();
 
-      return new Manager($Manager['id'], $Manager['name'], $Manager['location_id']);
+      return new Manager($managerdetails['id'], $managerdetails['name'], $managerdetails['location_id']);
     }
 
-    public static function insertmanagers($name,$location_id) {
+    public static function insertmanager($name,$location_id) {
       $db = Db::getInstance();
       $location_id = intval($location_id);
       $sql="INSERT INTO manager (name,location_id)
@@ -40,18 +39,18 @@
       $db->query($sql);
     }
 
-    public static function updatemanagers($id,$name,$location_id) {
+    public static function updatemanager($man,$name,$location_id) {
       $db = Db::getInstance();
-      $id = intval($id);
+      $man = intval($man);
       $location_id = intval($location_id);
       $sql="UPDATE manager SET name = '$name', location_id='$location_id' 
-       WHERE id = '$id'";
+       WHERE id = '$man'";
       $db->query($sql);
     }
 
-  	public static function deletemanagers($id) {
+  	public static function deletemanagers($man) {
       $db = Db::getInstance();
-      $sql="DELETE FROM manager WHERE id = '$id'";
+      $sql="DELETE FROM manager WHERE id = '$man'";
 	    $db->query($sql);
 		}
   }

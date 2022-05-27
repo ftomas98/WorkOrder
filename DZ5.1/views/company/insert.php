@@ -1,6 +1,6 @@
 <div class="forma">
 	<div class="title">Add Company</div>
-	<form action="?controller=companies&action=insertcompanies" method="POST">
+	<form action="?controller=company&action=insertcompany" method="POST">
 		<div class="form-group">
 			<input type="text" class="form-control" name="company_name" placeholder="Company name">
 		</div>

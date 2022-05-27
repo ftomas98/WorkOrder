@@ -1,8 +1,9 @@
 <div class="forma">
 <div class="title">Edit Company</div>
-<form action="?controller=companies&action=updatecompanies" method="POST">
+<form action="?controller=company&action=updatecompany" method="POST">
   <div class="form-group">
-    <input type="number" readonly class="form-control" placeholder="ID" name="comp" value=<?php echo $companydetails->id?>>
+    <input type="number" readonly class="form-control" placeholder="id" name="co" value=<?php echo $companydetails->id?>>
+  </div>
   <div class="form-group">
     <input type="text" class="form-control" name="company_name"  placeholder="Company name" value=<?php echo $companydetails->company_name?>>
   </div>
@@ -10,7 +11,7 @@
     <input type="text" class="form-control" name="address"  placeholder="Address" value=<?php echo $companydetails->address?>>
   </div>
   <div class="form-group">
-    <input type="number" class="form-control" name="phone"  placeholder="Phone" value=<?php echo $companydetails->phone?>>
+    <input type="text" class="form-control" name="phone"  placeholder="Phone" value=<?php echo $companydetails->phone?>>
   </div>
   <div class="form-group">
     <input type="text" class="form-control" name="fax"  placeholder="Fax" value=<?php echo $companydetails->fax?>>

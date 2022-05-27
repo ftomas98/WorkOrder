@@ -1,6 +1,6 @@
-
+	
 		<div>
-			<center><h2>Companies</h2></center>
+			<center><h2>Company</h2></center>
 		</div>
  
   <a class="DodajBtn" href="?controller=company&action=verifyinsert" role="button">New company? <i class="fa fa-plus"></i></a>
@@ -9,7 +9,7 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Company Name</th>
+            <th>Company name</th>
             <th>Address</th>
             <th>Phone</th>
             <th>Fax</th>
@@ -28,8 +28,8 @@
             <td><?php echo $row->email ?></td>
             <td><?php echo $row->website ?></td>
             <td><?php echo $row->description ?></td>
-            <td><a href="?controller=company&action=verifyupdate&comp=<?php echo $row->id?>" class="actionBtn">Update<i class="fa fa-edit"></i></a></td>
-            <td><a href="?controller=company&action=verifydelete&comp=<?php echo $row->id?>" class="actionBtn">Delete<i class="fa fa-trash"></i></a></td>
+            <td><a href="?controller=company&action=verifyupdate&co=<?php echo $row->id?>" class="actionBtn">Update<i class="fa fa-edit"></i></a></td>
+            <td><a href="?controller=company&action=verifydelete&co=<?php echo $row->id?>" class="actionBtn">Delete<i class="fa fa-trash"></i></a></td>
 
         </tr>
         <?php endforeach ?>

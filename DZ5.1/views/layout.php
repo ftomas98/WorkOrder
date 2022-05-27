@@ -16,9 +16,9 @@
                     <li class="item"><a href="#">Calendar</a></li>
                     <li class="item"><a href="#">About Us</a></li>
                     <li class="item"><a href="../DZ2.2/pretraga.html">Pretraga Dispatchera</a></li>
-                    <li class="item"><a href='?controller=managers&action=index'>Managers</a></li>
-	                <li class="item"><a href='?controller=locations&action=index'>Locations</a></li>
-	                <li class="item"><a href='?controller=companies&action=index'>Companies</a></li>
+                    <li class="item"><a href='?controller=manager&action=index'>Manager</a></li>
+	                <li class="item"><a href='?controller=location&action=index'>Location</a></li>
+	                <li class="item"><a href='?controller=company&action=index'>Company</a></li>
                     <li class="item"><a href="#">Login</a></li>
                 </ul>
             </nav>

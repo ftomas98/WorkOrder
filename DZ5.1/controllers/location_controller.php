@@ -1,47 +1,47 @@
 <?php
-  class LocationsController {
+  class LocationController {
     public function index() {
-      $companies = Locations::all();
-      require_once('views/locations/index.php');
+      $location = location::all();
+      require_once('views/location/index.php');
     }
   
     public function verifyinsert(){
-      require_once('views/locations/insert.php');
+      require_once('views/location/insert.php');
     }
 
-    public function insertlocations()
+    public function insertlocation()
     {
-      Locations::insertlocations($_POST['name'],$_POST['address'],$_POST['phone'],$_POST['email'],$_POST['company_id']);
-    return call('locations', 'index');
+      Location::insertlocation($_POST['name'],$_POST['address'],$_POST['phone'],$_POST['email'],$_POST['company_id']);
+      return call('location', 'index');
     }
   
   public function verifyupdate()
   {
     if (!isset($_GET['loc']))
           return call('pages', 'error');
-    $locationsdetails = Locations::find($_GET['loc']);
-    require_once('views/locations/update.php');
+    $locationdetails = Location::find($_GET['loc']);
+    require_once('views/location/update.php');
   }
 
-  public function updatelocations()
+  public function updatelocation()
   {
     if (!isset($_POST['loc']))
       return call('pages', 'error');
-  Locations::updatelocations($_POST['loc'],$_POST['name'],$_POST['address'],$_POST['phone'],$_POST['email'],$_POST['company_id']);
-  return call('locations', 'index');
+    Location::updatelocation($_POST['loc'],$_POST['name'],$_POST['address'],$_POST['phone'],$_POST['email'],$_POST['company_id']);
+    return call('location', 'index');
   }
 
 	public function delete() {
       if (!isset($_GET['loc']))
         return call('pages', 'error');
-      Locations::deletelocations($_GET['loc']);
-      return call('locations', 'index');
+      Location::deletelocation($_GET['loc']);
+      return call('location', 'index');
     }
 
     public function verifydelete(){
       if (!isset($_GET['loc']))
           return call('pages', 'error');
-          require_once('views/locations/delete.php');
+          require_once('views/location/delete.php');
       }
   }
- ?>
+?>

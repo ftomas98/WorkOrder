@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>College Database</title>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/Students">
+                <div class="logo">
+                    <img src="/logo.jpeg" alt="College Logo" />
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/Students">STUDENTI</a>
+                    </li>
+                    <li>
+                        <a href="/Subjects">PREDMETI</a>
+                    </li>
+                    <li>
+                        <a href="/Marks">OCJENE</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <article>
+                <div class="container body-content">
+                    @RenderBody()
+                    <hr />
+
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - FSRE - Andro Raspudić Dragan Drljepan ASP.NET Application</p>
+        </footer>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+</body>
+</html>

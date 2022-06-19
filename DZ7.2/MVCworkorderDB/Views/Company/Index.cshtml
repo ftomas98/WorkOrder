@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MVCworkorderDB.Models.companys>
+
+@{
+
+
+
+    ViewBag.Title = "Index";
+}
+
+<h2>TVRTKE</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.managers.first_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.locations.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.companys1)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.managers.first_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locations.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companys1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+
+
+
+    }
+
+</table>

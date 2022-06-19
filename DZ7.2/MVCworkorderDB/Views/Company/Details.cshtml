@@ -1,0 +1,57 @@
+﻿@model MVCworkorderDB.Models.companys
+
+@{
+
+    ViewBag.Title = "Details";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>workorder Database</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Details</h2>
+
+        <div>
+            <h4>companys</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.managers.first_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.managers.first_name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.locations.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.locations.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.companys1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.companys1)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+</body>
+
+</html>
